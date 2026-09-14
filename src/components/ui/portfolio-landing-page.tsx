@@ -36,6 +36,19 @@ export interface Publication {
   link: string;
 }
 
+export interface BookChapter {
+  year: string;
+  bookTitle: string;
+  publisher: string;
+  chapterTitle: string;
+  authors: string;
+  editors?: string;
+  pages: string;
+  abstract: string;
+  keywords: string[];
+  isbn: string;
+}
+
 export interface PortfolioPageProps {
   logo?: { initials: React.ReactNode; name: React.ReactNode; };
   navLinks?: NavLink[];
@@ -46,6 +59,7 @@ export interface PortfolioPageProps {
   stats?: Stat[];
   experience?: Experience[];
   publications?: Publication[];
+  bookChapters?: BookChapter[];
   contact?: {
     heading: React.ReactNode;
     subtitle: React.ReactNode;
@@ -122,6 +136,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({
   stats = [],
   experience = [],
   publications = [],
+  bookChapters = [],
   contact,
   showAnimatedBackground = true,
 }) => {
@@ -181,7 +196,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({
             </div>
             
             {/* Metrics */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-[#818cf8]/10 border border-[#818cf8]/12 rounded-xl overflow-hidden max-w-2xl">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px bg-[#818cf8]/10 border border-[#818cf8]/12 rounded-xl overflow-hidden max-w-2xl">
               {stats.map((stat, i) => (
                 <div key={i} className="bg-[#020406]/60 backdrop-blur-md p-4 text-center">
                   <span className="font-space text-2xl md:text-3xl font-bold text-[#818cf8] block">{stat.value}</span>
@@ -298,7 +313,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({
           <div className="max-w-6xl mx-auto">
             <span className="font-dm text-[10px] text-[#818cf8] tracking-widest uppercase block mb-2">02 — Projects</span>
             <h2 className="font-space text-3xl md:text-5xl font-bold text-white mb-12">Research <em className="text-[#22d3a5] not-italic">case studies</em></h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {projects.map((project, index) => (
                 <div key={index} className={`glass-card rounded-2xl p-6 text-left flex flex-col justify-between relative group overflow-hidden ${index === 1 ? '!border-[#818cf8]/35 !bg-[#818cf8]/5' : (index % 2 === 1 ? '!border-[#818cf8]/15' : '!border-[#22d3a5]/12')}`}>
                   <div>
@@ -399,10 +414,74 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({
           </div>
         </section>
 
+        {/* BOOK CHAPTERS */}
+        {bookChapters.length > 0 && (
+          <section id="book-chapters" className="w-full px-6 py-20 bg-[#060a10]/90 border-t border-[#818cf8]/12">
+            <div className="max-w-6xl mx-auto">
+              <span className="font-dm text-[10px] text-[#818cf8] tracking-widest uppercase block mb-2">05 — Book Chapters</span>
+              <h2 className="font-space text-3xl md:text-5xl font-bold text-white mb-12">Published <em className="text-[#22d3a5] not-italic">chapters</em></h2>
+              <div className="grid grid-cols-1 gap-8 max-w-5xl mx-auto">
+                {bookChapters.map((chapter, index) => (
+                  <div key={index} className="book-chapter-card glass-card rounded-3xl p-8 relative group overflow-hidden !border-[#22d3a5]/25 !bg-[#22d3a5]/3 backdrop-blur-2xl hover:!border-[#22d3a5]/50 hover:!bg-[#22d3a5]/5 transition-all duration-500 shadow-2xl">
+                    {/* Glass shimmer effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#22d3a5]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    
+                    <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-8">
+                      {/* Left: Meta info */}
+                      <div className="flex flex-col">
+                        <div className="flex flex-wrap gap-1.5 mb-4">
+                          <span className="font-dm text-[8px] bg-[#22d3a5]/10 border border-[#22d3a5]/20 text-[#22d3a5] px-2.5 py-0.5 rounded uppercase tracking-wider">{chapter.year}</span>
+                          <span className="font-dm text-[8px] bg-[#818cf8]/10 border border-[#818cf8]/20 text-[#818cf8] px-2.5 py-0.5 rounded uppercase tracking-wider">{chapter.publisher}</span>
+                          <span className="font-dm text-[8px] bg-[#22d3a5]/10 border border-[#22d3a5]/20 text-[#22d3a5] px-2.5 py-0.5 rounded uppercase tracking-wider">Book Chapter</span>
+                        </div>
+                        
+                        <h3 className="font-space text-base md:text-lg font-bold text-white mb-3 leading-snug group-hover:!text-[#22d3a5] transition-colors">{chapter.chapterTitle}</h3>
+                        
+                        <div className="font-dm text-[10px] text-[#8b9bb4] mb-1">{chapter.authors}</div>
+                        {chapter.editors && (
+                          <div className="font-dm text-[9px] text-[#3d4f66] mb-1">Eds. {chapter.editors}</div>
+                        )}
+                        
+                        <div className="mt-3 space-y-1.5">
+                          <div className="flex items-start gap-2">
+                            <span className="font-dm text-[8px] text-[#3d4f66] uppercase tracking-wider shrink-0 mt-0.5">Book:</span>
+                            <span className="font-dm text-[10px] text-[#8b9bb4] italic">{chapter.bookTitle}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="font-dm text-[8px] text-[#3d4f66] uppercase tracking-wider">Pages:</span>
+                            <span className="font-dm text-[10px] text-[#8b9bb4]">{chapter.pages}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="font-dm text-[8px] text-[#3d4f66] uppercase tracking-wider">ISBN:</span>
+                            <span className="font-mono text-[10px] text-[#22d3a5]">{chapter.isbn}</span>
+                          </div>
+                        </div>
+                        
+                        <div className="flex flex-wrap gap-1.5 mt-4">
+                          {chapter.keywords.map(kw => (
+                            <span key={kw} className="font-dm text-[7px] bg-white/5 border border-white/5 text-[#8b9bb4] px-2 py-0.5 rounded-full">{kw}</span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      {/* Right: Abstract */}
+                      <div className="flex flex-col">
+                        <div className="text-[11px] leading-relaxed text-[#8b9bb4] font-mono bg-black/30 p-5 rounded-xl border border-white/5 overflow-y-auto flex-1">
+                          <span className="text-[#22d3a5] font-bold">Abstract:</span> {chapter.abstract}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* CONTACT */}
         <section id="contact" className="w-full px-6 py-20 bg-[#060a10]/90 border-t border-[#818cf8]/12">
           <div className="max-w-6xl mx-auto">
-            <span className="font-dm text-[10px] text-[#818cf8] tracking-widest uppercase block mb-2">05 — Contact</span>
+            <span className="font-dm text-[10px] text-[#818cf8] tracking-widest uppercase block mb-2">06 — Contact</span>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
                 <h2 className="font-space text-3xl md:text-5xl font-bold text-white mb-6">Build something at the <em className="text-[#818cf8] not-italic">frontier</em></h2>

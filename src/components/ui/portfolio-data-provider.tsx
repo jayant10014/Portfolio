@@ -11,6 +11,7 @@ const customPortfolioData: PortfolioPageProps = {
     { label: 'Projects', href: '#projects' },
     { label: 'Experience', href: '#experience' },
     { label: 'Publications', href: '#publications' },
+    { label: 'Book Chapters', href: '#book-chapters' },
     { label: 'Contact', href: '#contact' },
   ],
   resume: {
@@ -63,11 +64,20 @@ const customPortfolioData: PortfolioPageProps = {
       linkText: 'M.Sc. Dissertation',
       linkHref: '#',
     },
+    {
+      title: 'Rohituka (A. polystachya) as a Source of ALK-Targeting Phytoconstituents: Molecular Docking & Dynamics',
+      badge: 'Molecular Docking & MD',
+      description: 'Docked 39 A. polystachya phytoconstituents into the ALK ATP-binding site (PDB 4Z55) via Glide XP. Rohitukine ranked highest (−8.28 kcal/mol) with conserved H-bonds to MET1199. MD simulation confirmed stable binding (89.25% H-bond occupancy, MM-PBSA ΔG = −14.50 kcal/mol) — first report linking a specific Rohituka constituent to direct ALK interaction in NSCLC.',
+      tags: ['Glide XP Docking', 'MD Simulation', 'MM-PBSA', 'PyMOL', 'Lipinski RO5', 'PDB 4Z55'],
+      linkText: 'Case study coming soon',
+      linkHref: '#',
+    },
   ],
   stats: [
     { value: '4', label: 'Projects' },
     { value: '10+', label: 'Lab Techniques' },
     { value: '2', label: 'Publications' },
+    { value: '1', label: 'Book Chapter' },
     { value: '3', label: 'Languages' },
   ],
   experience: [
@@ -108,6 +118,20 @@ const customPortfolioData: PortfolioPageProps = {
       keywords: ['Lung Cancer', 'Non-Smokers', 'EGFR', 'ALK', 'Targeted Therapy', 'Oncology'],
       doi: '10.1016/j.critrevonc.2026.105436',
       link: 'https://doi.org/10.1016/j.critrevonc.2026.105436',
+    },
+  ],
+  bookChapters: [
+    {
+      year: '2026',
+      bookTitle: 'Organic Agriculture and Sustainable Farming Systems',
+      publisher: 'Learning Media Publication, Meerut',
+      chapterTitle: 'Next-Generation Biotechnology for Jaivik Kheti: Biofertilizers & Plant Growth Promoters',
+      authors: 'Singh S.*, Kushwaha J.M.',
+      editors: 'Hasan F., Singh A.',
+      pages: 'pp. 15–19',
+      abstract: 'Reviews biofertilizers and plant growth-promoting microorganisms (PGPR, mycorrhizal fungi, endophytes) as biotechnology solutions for India\'s Jaivik Kheti organic farming movement. Covers next-generation formulations — multi-species microbial consortia, nano-encapsulation, and genome-informed strain selection — alongside emerging tools like metagenomics, CRISPR editing, and AI-driven discovery. Also highlights Indian government initiatives (PKVY, NMNF) and quality-control challenges across manufacturers.',
+      keywords: ['Biofertilizers', 'PGPR', 'Microbial Consortia', 'Sustainable Agriculture', 'Metagenomics'],
+      isbn: '978-81-69199-14-8',
     },
   ],
   contact: {
