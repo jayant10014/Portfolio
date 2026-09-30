@@ -126,7 +126,7 @@ const customPortfolioData: PortfolioPageProps = {
       title: 'From Rhizosphere to Resistance: Microbe-Plant Interactions in Eco-Smart Biocontrol',
       authors: 'Singh S., Sharma V.K., Shrivastav D., Kushwaha J.M., Mishra M.K. & Beg M.M.A.',
       citation: 'Vol. 15, e70398 · 2026',
-      abstract: 'Reviews eco-smart biocontrol as a next-generation crop-protection paradigm that leverages beneficial rhizosphere microorganisms, multi-omics discovery, and AI-assisted predictive microbiome design to suppress phytopathogens and enhance plant immunity — while critically examining challenges of field-scale adoption and regulatory frameworks.',
+      abstract: 'Reviews eco-smart biocontrol as a next-generation crop-protection paradigm that leverages beneficial rhizosphere microorganisms, multi-omics discovery, and AI-assisted predictive microbiome design to suppress phytopathogens and enhance plant immunity, while critically examining challenges of field-scale adoption and regulatory frameworks.',
       keywords: ['Eco-Smart Biocontrol', 'Rhizosphere Microbiome', 'Plant–Microbe Interactions', 'AI in Agriculture', 'Induced Systemic Resistance'],
       doi: '10.1002/mbo3.70398',
       link: 'https://doi.org/10.1002/mbo3.70398',
