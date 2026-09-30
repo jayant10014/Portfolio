@@ -387,7 +387,7 @@ const PortfolioPage: React.FC<PortfolioPageProps> = ({
                     <div className="text-xs text-[#64748b] mb-3">{pub.citation}</div>
                     
                     {/* Abstract with custom scrollable area to guarantee the card remains a perfect square */}
-                    <div className="text-xs md:text-sm leading-relaxed text-[#94a3b8] bg-black/30 p-4 rounded-xl border border-white/5 overflow-y-auto flex-1 mb-4 font-normal">
+                    <div className="pub-abstract-scroll text-xs md:text-sm leading-relaxed text-[#94a3b8] bg-black/30 p-4 rounded-xl border border-white/5 overflow-y-auto flex-1 mb-4 font-normal">
                       <span className="text-[#f472b6] font-semibold">Abstract:</span> {pub.abstract}
                     </div>
                   </div>
