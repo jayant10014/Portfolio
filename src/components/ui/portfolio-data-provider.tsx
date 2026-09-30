@@ -76,7 +76,7 @@ const customPortfolioData: PortfolioPageProps = {
   stats: [
     { value: '4', label: 'Projects' },
     { value: '10+', label: 'Lab Techniques' },
-    { value: '2', label: 'Publications' },
+    { value: '3', label: 'Publications' },
     { value: '1', label: 'Book Chapter' },
     { value: '3', label: 'Languages' },
   ],
@@ -118,6 +118,18 @@ const customPortfolioData: PortfolioPageProps = {
       keywords: ['Lung Cancer', 'Non-Smokers', 'EGFR', 'ALK', 'Targeted Therapy', 'Oncology'],
       doi: '10.1016/j.critrevonc.2026.105436',
       link: 'https://doi.org/10.1016/j.critrevonc.2026.105436',
+    },
+    {
+      year: '2026',
+      journal: 'MicrobiologyOpen · Wiley',
+      type: 'Review Article',
+      title: 'From Rhizosphere to Resistance: Microbe-Plant Interactions in Eco-Smart Biocontrol',
+      authors: 'Singh S., Sharma V.K., Shrivastav D., Kushwaha J.M., Mishra M.K. & Beg M.M.A.',
+      citation: 'Vol. 15, e70398 · 2026',
+      abstract: 'Reviews eco-smart biocontrol as a next-generation crop-protection paradigm that leverages beneficial rhizosphere microorganisms, multi-omics discovery, and AI-assisted predictive microbiome design to suppress phytopathogens and enhance plant immunity — while critically examining challenges of field-scale adoption and regulatory frameworks.',
+      keywords: ['Eco-Smart Biocontrol', 'Rhizosphere Microbiome', 'Plant–Microbe Interactions', 'AI in Agriculture', 'Induced Systemic Resistance'],
+      doi: '10.1002/mbo3.70398',
+      link: 'https://doi.org/10.1002/mbo3.70398',
     },
   ],
   bookChapters: [
